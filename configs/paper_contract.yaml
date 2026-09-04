@@ -1,0 +1,41 @@
+manuscript:
+  source: ../Y40_ESWA_submission_package/manuscript.tex
+  sha256: B15794FE18CD99599A78EE8FBB8BCDAF5AEDBFAB459DA60E9ECE0BAED0055239
+  title: Domain-gated multi-fidelity learning for data-efficient inverse design of smart materials
+
+locked_protocol:
+  task_count: 6
+  task_families: [LCE, SMP, HG, DEA, MRC, PRF]
+  fidelity_levels: [L, M, H]
+  runs_per_task: 15
+  online_hf_budget: 120
+  calibration_nominal_coverage: 0.90
+  acquisition_resamples: 64
+  gate_distance_quantile: 0.95
+  gate_width_quantile: 0.90
+  gate_convergence_quantile: 0.05
+
+paper_interfaces:
+  response_vector: task-defined scalar response vector
+  field_response: optional task-defined field on a declared grid
+  convergence_label: solver reaches tolerance without a nonphysical state
+  feasibility_label: all task constraints are nonpositive
+  archive_rule: only converged, feasible H evaluations enter the reported archive
+  hf_budget_rule: only online H evaluations consume the budget
+
+required_task_adapters:
+  - design bounds and pre-evaluation descriptor schema for each task family
+  - fixed LF, MF and HF evaluator for each task family
+  - response-to-objective and response-to-constraint projection
+  - task-specific energy, equilibrium and field residual operators
+  - solver runtime and convergence labels
+
+explicitly_not_printed_in_manuscript:
+  - exact material parameters and geometry bounds
+  - exact LF/MF/HF solver implementations and discretizations
+  - network widths, activation choices and optimizer hyperparameters
+  - initial sample counts and candidate-pool size
+  - candidate perturbation and tie-breaking rules
+  - task-specific reference points and target-HV values
+  - runtime calibration means before observations are available
+
