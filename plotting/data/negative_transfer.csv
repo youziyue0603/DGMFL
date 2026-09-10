@@ -1,0 +1,19 @@
+method,material,negative_transfer
+No adapter,LCE,1
+No adapter,SMP,1
+No adapter,Hydrogel,1
+No adapter,DEA,0
+No adapter,MRC,1
+No adapter,PRF,0
+No gate,LCE,0
+No gate,SMP,0
+No gate,Hydrogel,1
+No gate,DEA,0
+No gate,MRC,1
+No gate,PRF,1
+Full method,LCE,0
+Full method,SMP,0
+Full method,Hydrogel,1
+Full method,DEA,0
+Full method,MRC,0
+Full method,PRF,0
