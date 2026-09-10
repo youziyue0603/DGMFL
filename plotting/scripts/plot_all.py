@@ -119,7 +119,6 @@ def save_figure(fig, stem, width_mm=183, height_mm=118):
     plt.close(fig)
 
 
-benchmark = pd.read_csv(DATA_DIR / "main_benchmark.csv")
 summary = pd.read_csv(DATA_DIR / "main_summary.csv")
 method_summary = pd.read_csv(DATA_DIR / "method_summary.csv")
 curve_df = pd.read_csv(DATA_DIR / "convergence_curves.csv")
